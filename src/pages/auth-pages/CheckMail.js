@@ -3,14 +3,7 @@ import {React,useState} from 'react';
 
 function CheckMail() {
 
-    const [showpassword,setShowPassword]=useState('password');
-    const showpasswordhandle=()=>{
-       if(showpassword==='password'){
-        setShowPassword('text')
-       } else{
-        setShowPassword('password')
-       }
-    }
+  
   return (
    <>
    {/* over all wrap 1 */}

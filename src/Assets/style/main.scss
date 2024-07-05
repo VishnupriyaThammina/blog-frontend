@@ -1,5 +1,7 @@
 @import './pages/Login.scss';
 @import './pages/Checkmail.scss';
+@import './pages/Verification.scss';
+@import './components/Navbar.scss';
 
 @import './abstracts/mixins.scss';
 
@@ -70,4 +72,8 @@
 
 .yellow{
     background-color: yellow;
+}
+
+.p-white{
+    color: white;
 }

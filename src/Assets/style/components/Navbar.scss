@@ -1,0 +1,26 @@
+.n-wrap{
+    @include flex(center,center,row);
+    height: 15vh;
+}
+.n-w-1{
+    @include flex(center,center,row);
+    height: 80%;
+    width: 98%;
+    border-radius:1vh;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.nw1-1{
+    @include flex(center,center,row);
+    width: 25%;
+    height: 100%;
+
+}
+
+.nw1{
+    @include flex(center,flex-start,row);
+    width: 25%;
+    height: 100%;
+    padding-inline: 2vh;
+}

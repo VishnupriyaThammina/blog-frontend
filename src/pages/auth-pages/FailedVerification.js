@@ -1,7 +1,7 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
 
-function UserNotVerified() {
+function FailedVerification() {
 
  
   return (
@@ -14,7 +14,7 @@ function UserNotVerified() {
 
       
         {/* ui area for login side image */}
-        <Grid  item className='checkmail-wrap-b '>
+        <Grid  item className='wrap-ver bg-failed '>
         <Grid container item className='wrap2-1-text'>
             <Grid container item className='w2-t-h2'>
            
@@ -23,12 +23,12 @@ function UserNotVerified() {
             
             <Typography variant='h4'>Blogg</Typography>
             </Grid> 
-            <Grid  item container className='w2-tt-2'>
-            <p>Invalid user access, please register </p>
+            <Grid  item container className=''>
+            <p >Email verification has failed, please try registering again </p>
 
             </Grid> 
             <Grid  item container className='w2-tt-2'>
-           <button className='btn-white'>Register here</button>
+           <button className='btn-white'>Register</button>
             </Grid> 
             </Grid>
             </Grid>
@@ -47,4 +47,4 @@ function UserNotVerified() {
 )
 }
 
-export default UserNotVerified
+export default FailedVerification
