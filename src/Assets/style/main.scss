@@ -1,0 +1,73 @@
+@import './pages/Login.scss';
+@import './pages/Checkmail.scss';
+
+@import './abstracts/mixins.scss';
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    border: none;
+    border-radius: 1vh;
+    box-shadow: rgba(31, 31, 31, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.btn:hover{
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.btn-black{
+    background-color: black;
+    color: white;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    border: none;
+    border-radius: 1vh;
+    box-shadow: rgba(31, 31, 31, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.btn-black:hover{
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.btn-white{
+    background-color: white;
+    color: black;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 1vh;
+    box-shadow: rgba(31, 31, 31, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.btn-white:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+// box model helper css
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.yellow{
+    background-color: yellow;
+}

@@ -1,0 +1,99 @@
+@import "../abstracts/mixins.scss";
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(226, 237, 248);
+}
+
+.wrap2{
+    @include flex(center,center,row);
+    width: 85%;
+    height: 90%;
+    border-radius: 2vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.wrap3{
+    @include flex(center,space-around,column);
+    width: 90%;
+    height: 98%;
+    border-radius: 2vw;
+@include respond-to(small){
+    @include flex(center,space-around,row);
+
+}
+}
+
+.wrap2-1{
+    @include flex(center,center,row);
+    width: 30%;
+    height: 98%;
+    border-radius: 2vh;
+    background-color: black;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+@include respond-to(small){
+width: 95%;
+height: 30%;
+}
+}
+.wrap2-1-text{
+    @include flex(center,flex-start,column);
+
+    width: 90%;
+    height: 100%
+}
+.w2-t-h2{
+    @include flex(center,center,column);
+    padding-inline: 5vh;
+height: 100%;
+
+}
+.w2-tt{
+    @include flex(center,flex-start,row);
+    padding: 0vh;
+    margin: 0vh;
+
+}
+
+.w2-tt-2>p{
+    color: rgb(164, 164, 164)
+}
+.wrap2-2{
+    @include flex(center,center,row);
+    width: 65%;
+    height: 100%;
+    border-radius: 2vh;
+    @include respond-to(small){
+        width: 100%;
+        height: 65%;
+        }
+}
+
+// css for form
+
+.wrap-form{
+    height: 100%;
+    width: 50%;
+    @include flex(center,center,row);
+    @include respond-to(small){
+        width: 70%;
+    }
+
+}
+
+input[type="checkbox"] {
+    
+    accent-color: rgb(0, 0, 0);
+  }
+  
+  .form-items{
+    padding: 2vh;
+
+  }

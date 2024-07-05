@@ -1,6 +1,7 @@
 import '../src/Assets/style/main.scss'
 import { Route, Routes } from 'react-router-dom';
 import Login from './pages/auth-pages/Login';
+import CheckMail from './pages/auth-pages/CheckMail';
 function App() {
   return (
   <>
@@ -8,7 +9,7 @@ function App() {
   <Routes>
     <Route path='/login' element={<Login/>} />
     <Route path='/' element={<Login/>} />
-
+    <Route path='/checkmail' element={<CheckMail/>}/>
   </Routes>
   </>
   );

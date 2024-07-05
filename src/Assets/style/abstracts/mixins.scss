@@ -1,0 +1,18 @@
+@mixin flex($align: stretch, $justify: flex-start, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+  }
+  
+  @mixin respond-to($breakpoint) {
+    @if $breakpoint == small {
+      @media (max-width: 600px) { @content; }
+    } @else if $breakpoint == tablet {
+      @media (max-width: 1000px) { @content; }}
+      @else if $breakpoint == mid {
+        @media (max-width: 1200px) { @content; }
+    } @else if $breakpoint == desktop {
+      @media (max-width: 1500px) { @content; }
+    }
+  }
