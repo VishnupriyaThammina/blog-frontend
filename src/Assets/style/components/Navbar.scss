@@ -4,23 +4,40 @@
 }
 .n-w-1{
     @include flex(center,center,row);
-    height: 80%;
-    width: 98%;
+    height: 70%;
+    width: 70%;
     border-radius:1vh;
-    background-color: rgb(0, 0, 0);
-    color: white;
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 255, 255);
+   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+   @include respond-to(small){
+    width: 95%;
+   }
 }
 
 .nw1-1{
     @include flex(center,center,row);
-    width: 25%;
+    width: 20%;
     height: 100%;
 
 }
 
+
 .nw1{
     @include flex(center,flex-start,row);
-    width: 25%;
+    width: 20%;
     height: 100%;
     padding-inline: 2vh;
+
+}
+
+.nw-b-1{
+    @include flex(center,center,row);
+
+}
+
+.logo-p{
+    font-family: "Ysabeau", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
 }
