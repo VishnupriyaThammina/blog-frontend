@@ -1,9 +1,11 @@
 @import './pages/Login.scss';
 @import './pages/Checkmail.scss';
 @import './pages/Verification.scss';
+@import './pages/Profile.scss';
 @import './components/Navbar.scss';
+@import './components/Postcard.scss';
+@import './components/Footer.scss';
 @import './pages/Homepage.scss';
-
 @import './abstracts/mixins.scss';
 
 .flex-center{
@@ -13,6 +15,54 @@
 }
 
 
+.btn-2{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    width: 100%;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    border-radius: 1vh;
+}
+.btn-2:hover{
+    color: white;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.938);
+}
+
+.btn-1{
+    background-color: rgb(131, 152, 255);
+    color: rgb(0, 34, 255);
+    border: none;
+    width: 100%;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 1vh;
+}
+.btn-1:hover{
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    background-color: rgba(0, 55, 253, 0.938);
+}
+.btn-3{
+    background-color: rgb(255, 143, 143);
+    color: rgb(222, 0, 0);
+    border: none;
+    width: 100%;
+    font-weight: 700;
+    padding-block: 1.7vh;
+    padding-inline: 2.5vh;
+    font-size: 14px;
+    border-radius: 1vh;
+}
+.btn-3:hover{
+    color: white;
+    transition: 0.3s;
+    background-color: rgba(223, 0, 0, 0.938);
+}
 
 .btn{
     background-color: black;
@@ -26,7 +76,7 @@
     box-shadow: rgba(31, 31, 31, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 .btn:hover{
-    background-color: rgba(0, 0, 0, 0.938);
+    background-color: rgba(47, 47, 47, 0.938);
 }
 
 .btn-black{
@@ -56,6 +106,10 @@
 }
 .btn-white:hover{
     background-color: rgb(216, 216, 216);
+}
+
+.wrap-btn-load{
+    margin-block: 2vh;
 }
 
 // box model helper css

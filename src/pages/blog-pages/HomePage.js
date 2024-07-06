@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar'
 import { Grid, Typography } from '@mui/material'
 import img1 from '../../Assets/images/articles.jpg';
 import PostCard from '../../components/PostCard';
+import Footer from '../../components/Footer';
 function HomePage() {
   return (
     <>
@@ -35,8 +36,8 @@ function HomePage() {
       <Grid item className='wrap-hp'>
      <Grid container className='wrap-2-h'>
 <Grid container className='text-1-h4'>
-  <Typography variant='h4' sx={{fontWeight:700}}>
-    Recent posts
+  <Typography variant='h5' sx={{fontWeight:700}}>
+    Recent blog posts
   </Typography>
 </Grid>
         <Grid container >
@@ -47,9 +48,20 @@ function HomePage() {
         <PostCard/>
       
         </Grid>
+        <Grid container>
+        <PostCard/>
+      
+        </Grid>
+        <Grid container>
+        <PostCard/>
+      
+        </Grid>
+
         </Grid>
       </Grid>
     </Grid>
+
+    <Footer/>
     </>
   )
 }

@@ -6,7 +6,7 @@
 
 .wrap-2-h{
     @include flex(center,center,row);
-
+    
 
 }
 .wrap-hp{
@@ -44,5 +44,10 @@ color: white;
 }
 
 .text-1-h4{
-    margin-block: 5vh;
+    margin-top: 5vh;
+//     width: 70%;
+//     @include respond-to(small){
+// width: 90%;
+//     }
 }
+
