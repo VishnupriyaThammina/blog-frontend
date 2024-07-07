@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material'
 import img1 from '../../Assets/images/articles.jpg';
 import PostCard from '../../components/PostCard';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 
 function Profile() {
   return (
@@ -16,7 +17,9 @@ function Profile() {
             username
         </Typography>
         <Grid>
+          <Link to='/create'>
         <button className='btn-black'>Create post</button>
+        </Link>
 
         </Grid>
     </Grid>
