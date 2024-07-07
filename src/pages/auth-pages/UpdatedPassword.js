@@ -1,5 +1,6 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function UpdatedPassword() {
   return (
@@ -26,7 +27,10 @@ function UpdatedPassword() {
  
              </Grid> 
              <Grid  item container className='w2-tt-2'>
+              <Link to='/login'>
             <button className='btn-white'>Login</button>
+            </Link>
+
              </Grid> 
              </Grid>
              </Grid>

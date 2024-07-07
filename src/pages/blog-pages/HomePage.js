@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material'
 import img1 from '../../Assets/images/articles.jpg';
 import PostCard from '../../components/PostCard';
 import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
 function HomePage() {
   return (
     <>
@@ -21,7 +22,12 @@ function HomePage() {
   </Grid>
  
   <Grid item container className='display-btn-1' >
-   <button className='btn-white'>Create Blog</button> </Grid>
+    <Link to='/create'>
+   <button   className='btn-white'>
+    Create Blog
+    </button> 
+    </Link>
+    </Grid>
   </Grid>
   </Grid>
 

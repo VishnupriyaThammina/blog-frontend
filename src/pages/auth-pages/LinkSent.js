@@ -2,10 +2,9 @@ import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
 import { Link } from 'react-router-dom';
 
-function CheckMail() {
-
-  
+function LinkSent() {
   return (
+    
    <>
    {/* over all wrap 1 */}
    <Grid  className='wrap '>
@@ -25,14 +24,14 @@ function CheckMail() {
             <Typography variant='h4'>Blogg</Typography>
             </Grid> 
             <Grid  item container className='w2-tt-2'>
-            <p>Check your mailbox for email verification, after successful verification try logging in </p>
+            <p>Check your mailbox Reset you password </p>
 
             </Grid> 
             <Grid  item container className='w2-tt-2'>
-            <Link to='/login'>
+                <Link to='/login'>
            <button className='btn-white'>Login</button>
            </Link>
-           
+          
             </Grid> 
             </Grid>
             </Grid>
@@ -47,8 +46,7 @@ function CheckMail() {
     </Grid>
    </Grid>
    </>
-   
-)
+  )
 }
 
-export default CheckMail
+export default LinkSent

@@ -2,7 +2,10 @@
 @import './pages/Checkmail.scss';
 @import './pages/Verification.scss';
 @import './pages/Profile.scss';
+@import './pages/Createpage.scss';
+@import './pages/Post.scss';
 @import './components/Navbar.scss';
+@import './components/Popup.scss';
 @import './components/Postcard.scss';
 @import './components/Footer.scss';
 @import './pages/Homepage.scss';
@@ -24,6 +27,7 @@
     padding-inline: 2.5vh;
     font-size: 14px;
     border-radius: 1vh;
+    cursor: pointer;
 }
 .btn-2:hover{
     color: white;
@@ -37,6 +41,8 @@
     border: none;
     width: 100%;
     padding-block: 1.7vh;
+    cursor: pointer;
+
     padding-inline: 2.5vh;
     font-size: 14px;
     font-weight: 700;
@@ -49,6 +55,7 @@
 }
 .btn-3{
     background-color: rgb(255, 143, 143);
+    cursor: pointer;
     color: rgb(222, 0, 0);
     border: none;
     width: 100%;
@@ -65,6 +72,7 @@
 }
 
 .btn{
+    cursor: pointer;
     background-color: black;
     color: white;
     width: 100%;
@@ -80,6 +88,7 @@
 }
 
 .btn-black{
+    cursor: pointer;
     background-color: black;
     color: white;
     padding-block: 1.7vh;
@@ -94,6 +103,7 @@
 }
 
 .btn-white{
+    cursor: pointer;
     background-color: white;
     color: black;
     padding-block: 1.7vh;
@@ -112,6 +122,10 @@
     margin-block: 2vh;
 }
 
+.Link{
+    text-decoration: none;
+    color: white;
+}
 // box model helper css
 .green{
     background-color: green;

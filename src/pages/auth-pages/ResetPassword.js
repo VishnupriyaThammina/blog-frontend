@@ -1,5 +1,6 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function ResetPassword() {
     const [showpassword1,setShowPassword1]=useState('password');
@@ -48,7 +49,7 @@ function ResetPassword() {
         <Grid item className='wrap2-2 '>
 
     <Grid item  className='wrap-form'>
-    <Grid container >
+    <Grid container className='inner-wrap'>
     
         <Grid item container  className='form-items'>
         <TextField
@@ -78,11 +79,20 @@ function ResetPassword() {
         <Grid container  className='form-items'>
         <input type="checkbox" onClick={showpasswordhandle}/>Show Password
         </Grid>
+
         <Grid container className='form-items'>
-            <button className='btn' >
-                Login
+        <Link to='/login' style={{width:'100%'}}>
+
+         
+            <button className='btn' style={{width:'100%'}}>
+                Reset password
             </button>
+         
+            </Link>
+      
+
         </Grid>
+
         </Grid>    
     </Grid>
 

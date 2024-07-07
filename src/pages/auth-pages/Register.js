@@ -1,5 +1,6 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function Register() {
 
@@ -44,7 +45,7 @@ function Register() {
         <Grid item className='wrap2-2 '>
 
     <Grid item  className='wrap-form'>
-    <Grid container >
+    <Grid container className='inner-wrap' >
     
         <Grid item container  className='form-items'>
         <TextField
@@ -75,9 +76,21 @@ function Register() {
         <input type="checkbox" onClick={showpasswordhandle}/>Show Password
         </Grid>
         <Grid container className='form-items'>
+            <Link to='/login'  style={{width:'100%'}}>
+
             <button className='btn' >
                 Register
             </button>
+            </Link>
+        </Grid>
+        <Grid container className='form-items'>
+      
+      <Typography variant='body'> Already have an account? then
+       
+       <Link to='/login'  className='link-login'>
+       Login
+       </Link>
+        </Typography> 
         </Grid>
         </Grid>    
     </Grid>

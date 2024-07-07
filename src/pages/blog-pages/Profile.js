@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material'
 import img1 from '../../Assets/images/articles.jpg';
 import PostCard from '../../components/PostCard';
 import Footer from '../../components/Footer';
+
 function Profile() {
   return (
    <>
@@ -57,7 +58,6 @@ Your blog posts
    
    </Grid></Grid>
 
-<Footer/>
 </>
   )
 }

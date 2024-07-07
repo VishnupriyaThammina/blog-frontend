@@ -2,3 +2,13 @@
 @include flex(center,space-between,row);
     
 }
+
+.popup-edit{
+
+}
+.popup-g{
+width: 50%;
+height: 50%;
+@include flex(center,center,row);
+
+}

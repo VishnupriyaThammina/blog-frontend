@@ -11,6 +11,11 @@ import FailedVerification from './pages/auth-pages/FailedVerification';
 import HomePage from './pages/blog-pages/HomePage';
 import FeedPage from './pages/blog-pages/FeedPage';
 import Profile from './pages/blog-pages/Profile';
+import EditPage from './pages/blog-pages/EditPage';
+
+import Post from './pages/blog-pages/Post';
+import CreatePage from './pages/blog-pages/CreatePage';
+import LinkSent from './pages/auth-pages/LinkSent';
 function App() {
   return (
   <>
@@ -29,6 +34,12 @@ function App() {
     <Route path='/failed-verification' element={<FailedVerification/>}/>
     <Route path='/feed' element={<FeedPage/>}/>
     <Route path='/profile' element={<Profile/>}/>
+    <Route path='/post' element={<Post/>}/>
+    <Route path='/create' element={<CreatePage/>}/>
+    <Route path='/edit' element={<EditPage/>}/>
+    <Route path='/linksent' element={<LinkSent/>}/>
+
+
 
 
 

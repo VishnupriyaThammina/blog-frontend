@@ -1,0 +1,20 @@
+.heading{
+    padding-block-start: 3vh;
+}
+.btns-wrap-post{
+    @include flex(center,flex-end,row);
+    padding: 1vh;
+
+    
+}
+.btns-post-page{
+    width: 30%;
+    @include flex(center,flex-end,row);
+
+}
+
+.post-btn-1{
+    @include flex(center,center,row);
+  padding: 1vh;
+    
+}

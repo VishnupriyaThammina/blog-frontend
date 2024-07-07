@@ -87,7 +87,9 @@ height: 100%;
     }
 
 }
-
+.inner-wrap{
+    width: 100%;
+}
 input[type="checkbox"] {
     
     accent-color: rgb(0, 0, 0);
@@ -96,4 +98,12 @@ input[type="checkbox"] {
   .form-items{
     padding: 2vh;
 
+  }
+
+  .link-login{
+    color: black;
+    padding-inline: 1vh;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(41, 41, 41, 0.922);
+    text-decoration-thickness: 1px;
   }

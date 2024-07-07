@@ -1,5 +1,6 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import {React,useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [showpassword,setShowPassword]=useState('password');
@@ -42,7 +43,7 @@ function Login() {
         <Grid item className='wrap2-2 '>
 
     <Grid item  className='wrap-form'>
-    <Grid container >
+    <Grid container className='inner-wrap' >
     
         <Grid item container  className='form-items'>
         <TextField
@@ -73,9 +74,22 @@ function Login() {
         <input type="checkbox" onClick={showpasswordhandle}/>Show Password
         </Grid>
         <Grid container className='form-items'>
-            <button className='btn' >
+            <Link to='/'  style={{width:'100%'}}>
+            <button className='btn'  >
                 Login
             </button>
+
+            </Link>
+
+        </Grid>
+        <Grid container className='form-items'>
+        <Link to='/linksent' className='link-login'>
+        Forgot password?
+        </Link>   or
+        <Link to='/register'  className='link-login'>
+        Create new account
+        
+        </Link>
         </Grid>
         </Grid>    
     </Grid>
