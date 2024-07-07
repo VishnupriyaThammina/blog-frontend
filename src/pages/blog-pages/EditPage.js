@@ -4,7 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import Navbar from '../../components/Navbar';
 import { Grid, TextField } from '@mui/material';
 
-function EditPage() {
+function EditPage({setAuth}) {
     const [img, setImg] = useState('')
     // for image preview
     function handleImage(e){
@@ -12,7 +12,7 @@ setImg(URL.createObjectURL(e.target.files[0]))
     }
   return (
 <>
-<Navbar/>
+<Navbar setAuth={setAuth}/>
 
         {/*Rich text editor */}
 <Grid conatiner className='wrap-1-h'>

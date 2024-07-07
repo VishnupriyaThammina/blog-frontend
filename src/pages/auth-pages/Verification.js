@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 function Verification() {
 
- 
+ // rather than multiple things we will have only two 
+ // if verification successfull 
+ // green bg, login text and login link 
+ // else black bg, register text
   return (
    <>
    {/* over all wrap 1 */}

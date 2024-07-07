@@ -59,6 +59,18 @@ function Register() {
                         InputProps={{ disableUnderline: true }}
                       />
         </Grid>
+        <Grid item container  className='form-items'>
+        <TextField
+                        label="username"
+                        variant="filled"
+                        id="username"
+                        type="text"
+                        name="username"
+                        sx={{width:"100%"}}
+                        style={{ marginTop: 11 }}
+                        InputProps={{ disableUnderline: true }}
+                      />
+        </Grid>
         <Grid item container className='form-items'>
         <TextField
                         label="password"
@@ -76,7 +88,7 @@ function Register() {
         <input type="checkbox" onClick={showpasswordhandle}/>Show Password
         </Grid>
         <Grid container className='form-items'>
-            <Link to='/login'  style={{width:'100%'}}>
+            <Link to='/checkmail'  style={{width:'100%'}}>
 
             <button className='btn' >
                 Register

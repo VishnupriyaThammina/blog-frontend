@@ -1,9 +1,49 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
-import {React,useState} from 'react';
-import { Link } from 'react-router-dom';
-
-function Login() {
+import {React,useEffect,useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Snackbar from '@mui/material/Snackbar';
+import axios from 'axios'
+function Login({setAuth}) {
+    const navigate = useNavigate();
     const [showpassword,setShowPassword]=useState('password');
+    // use state hook for validating form elements 
+  // hook for button check
+  const [btnOk,setBtnOk] =useState(false);
+  const [email, setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
+//   form validation
+  useEffect(() => {
+    validateForm(); // keep validating form for any change in email or password
+  }, [email, password]);
+
+  const validateForm = () => {
+    const emailValid = validateEmail(email); // if there exists an email
+    const passwordValid = password!== ''; //if password is not null
+    setBtnOk(emailValid && passwordValid);
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  const handleLogin = async () => {
+    try {
+        // sending http request to backend
+      const response = await axios.post('http://localhost:3030/auth/login', {
+        email,
+        password,
+      });
+      console.log('response: ',response.data.token)
+      const  token  = response.data.token;
+      localStorage.setItem('token', token); // set the token got as response in local storage
+      setAuth(true); // if auth set to true we can access the application 
+      navigate('/');
+    } catch (error) {
+      console.error('Login failed', error);
+    }
+  };
+
     const showpasswordhandle=()=>{
        if(showpassword==='password'){
         setShowPassword('text')
@@ -53,6 +93,7 @@ function Login() {
                         type="email"
                         name="email"
                         sx={{width:"100%"}}
+                        onChange={(e) => setEmail(e.target.value)}
                         style={{ marginTop: 11 }}
                         InputProps={{ disableUnderline: true }}
                       />
@@ -64,6 +105,7 @@ function Login() {
                         id="password"
                         type={showpassword}
                         name="password"
+                        onChange={(e) => setPassword(e.target.value)}
                         sx={{width:"100%"}}
                         style={{ marginTop: 11 }}
                         InputProps={{ disableUnderline: true }}
@@ -75,7 +117,8 @@ function Login() {
         </Grid>
         <Grid container className='form-items'>
             <Link to='/'  style={{width:'100%'}}>
-            <button className='btn'  >
+            {/* if button is not disabled we can send request to server */}
+            <button className='btn'disabled={!btnOk} onClick={handleLogin}  >
                 Login
             </button>
 

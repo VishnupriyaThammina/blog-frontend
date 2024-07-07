@@ -3,6 +3,8 @@ import {React,useState} from 'react';
 import { Link } from 'react-router-dom';
 
 function UpdatedPassword() {
+  // same like verification
+  // password update successful or not
   return (
     <>
     {/* over all wrap 1 */}

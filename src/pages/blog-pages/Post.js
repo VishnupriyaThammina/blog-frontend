@@ -6,7 +6,7 @@ import { Grid, TextField, Typography } from '@mui/material';
 import img1 from '../../Assets/images/articles.jpg'
 import Popup from '../../components/Popup'
 
-function Post() {
+function Post({setAuth}) {
     const [owner,setOwner]=useState(true)
     const [isOpen,setOpen] = useState(false)
     const [pop,setPop] = useState('')
@@ -32,7 +32,7 @@ function EditPop(){
 }
   return (
 <>
-<Navbar/>
+<Navbar setAuth={setAuth}/>
 
         {/*Rich text editor */}
 <Grid conatiner className='wrap-1-h'>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import img1 from '../Assets/images/articles.jpg'
 import Popup from './Popup'
 import { Link } from 'react-router-dom'
-function PostCard() {
+function PostCard({ title, subtitle }) {
     const [owner,setOwner]=useState(true)
     const [isOpen,setOpen] = useState(false)
     const [pop,setPop] = useState('')
@@ -45,10 +45,10 @@ function EditPop(){
     <Grid container className=' pwta-w'>
     <Grid className=' pwta-1'>
 <Typography variant='h5' sx={{fontWeight:700}}>
- How to create a simple  pop up in React and Material ui?  </Typography></Grid>
+{title || 'Default Title'} </Typography></Grid>
 <Grid className=' pwta-2'>
 <Typography variant='body' >
-   this is a detailed blog 
+{subtitle || 'Default sub Title'}
 </Typography>  </Grid>
 <Grid  className=' pwta-3'>
     <Grid container className='pwta-3-1'>

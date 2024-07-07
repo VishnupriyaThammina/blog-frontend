@@ -86,7 +86,11 @@
 .btn:hover{
     background-color: rgba(47, 47, 47, 0.938);
 }
-
+.btn:disabled {
+    background-color: #c0c0c0;
+    color: #ffffff;
+    cursor: not-allowed;
+  }
 .btn-black{
     cursor: pointer;
     background-color: black;

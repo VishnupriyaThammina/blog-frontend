@@ -5,8 +5,20 @@ import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import img1 from '../Assets/images/blogg-no-bg.png';
-import { Link } from 'react-router-dom';
-function Navbar() {
+import { Link , Navigate, useNavigate } from "react-router-dom";
+import axios from 'axios';
+function Navbar({setAuth}) {
+  const navigate =useNavigate();
+  const handleLogout = async () => {
+    console.log("Logout button clicked");
+    try {
+      localStorage.removeItem('token');
+      setAuth(false);
+      navigate('/login');
+    } catch (error) {
+      console.error("Error in logging out", error);
+    }
+  };
   return (
   <>
   <Grid container className='n-wrap'>
@@ -41,10 +53,10 @@ function Navbar() {
   </Link>
 </Grid> 
 <Grid item  className='nw1-1'>
-<Link to='/login' className='Link'>
+
   
-  <LogoutRoundedIcon  fontSize='small'/>
-  </Link>
+  <LogoutRoundedIcon onClick={handleLogout}  fontSize='small'/>
+
 </Grid> 
  </Grid>
 </Grid>
