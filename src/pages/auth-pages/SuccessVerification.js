@@ -3,7 +3,7 @@ import axios from 'axios';
 import {React,useEffect,useState} from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-function Verification() {
+function SuccessVerification() {
 
  // rather than multiple things we will have only two 
  // if verification successfull 
@@ -15,18 +15,21 @@ const navigate = useNavigate()
 
  const Verify = async () => {
     try {
+      const token = localStorage.getItem('token');
 
-    
+      if (!token) {
+        console.error('Token not available');
+        return;
+      }
       
 
-      const response= await axios.post('http://localhost:3030/user/verify-token',{token:id});
+      const response= await axios.post('http://localhost:3030/user/verify-token',{token:id}, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-      if(response.status===200){
-        navigate('/verified')
-        window.location.reload();
-      }
-    
-
+     
 
     } catch (error) {
       console.error('Error fetching recent data:', error);
@@ -48,7 +51,7 @@ const navigate = useNavigate()
 
       
         {/* ui area for login side image */}
-        <Grid  item className='wrap-ver checkmail-wrap-b  '>
+        <Grid  item className='wrap-ver bg-success '>
         <Grid container item className='wrap2-1-text'>
             <Grid container item className='w2-t-h2'>
            
@@ -58,13 +61,13 @@ const navigate = useNavigate()
             <Typography variant='h4'>Blogg</Typography>
             </Grid> 
             <Grid  item container className=''>
-            <p >Email verification on the way... </p>
+            <p >Email verification successful please login into the website </p>
 
             </Grid> 
             <Grid  item container className='w2-tt-2'>
-                
-           <button className='btn-white' onClick={Verify}>Click to verify </button>
-        
+                <Link to='/login'>
+           <button className='btn-white' onClick={Verify}>Login </button>
+           </Link>
           
             </Grid> 
             </Grid>
@@ -84,4 +87,4 @@ const navigate = useNavigate()
 )
 }
 
-export default Verification
+export default SuccessVerification

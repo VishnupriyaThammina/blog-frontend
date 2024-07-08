@@ -118,7 +118,7 @@ function Login({setAuth}) {
         <Grid container className='form-items'>
             <Link to='/'  style={{width:'100%'}}>
             {/* if button is not disabled we can send request to server */}
-            <button className='btn'disabled={!btnOk} onClick={handleLogin}  >
+            <button className='btn' disabled={!btnOk} onClick={handleLogin}  >
                 Login
             </button>
 

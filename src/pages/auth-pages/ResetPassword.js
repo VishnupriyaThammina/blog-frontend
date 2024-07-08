@@ -1,10 +1,13 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
+import axios from 'axios';
 import {React,useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 function ResetPassword() {
     const [showpassword1,setShowPassword1]=useState('password');
     const [showpassword2,setShowPassword2]=useState('password');
+    const [np, setNp] = useState('')
+    const [cp, setCp] = useState('')
 
     const showpasswordhandle=()=>{
        if(showpassword1==='password' && showpassword2==='password'){
@@ -17,6 +20,37 @@ function ResetPassword() {
 
        }
     }
+
+    const {id} = useParams();
+const navigate = useNavigate()
+
+
+ const reset = async () => {
+    try {
+
+    
+      
+
+      const response= await axios.post('http://localhost:3030/user/reset',{
+        token:id,
+        np:np,
+        cp:cp
+      });
+
+      if(response.status===200){
+        navigate('/updated-password')
+        window.location.reload();
+      }
+    
+
+
+    } catch (error) {
+      console.error('Error fetching recent data:', error);
+      navigate('/reset-password');
+      window.location.reload();
+    }
+  };
+
   return (
    <>
    {/* over all wrap 1 */}
@@ -59,6 +93,7 @@ function ResetPassword() {
                         type={showpassword1}
                         name="new-password"
                         sx={{width:"100%"}}
+                        onChange={(e) => setNp(e.target.value)}
                         style={{ marginTop: 11 }}
                         InputProps={{ disableUnderline: true }}
                       />
@@ -71,6 +106,8 @@ function ResetPassword() {
                         type={showpassword2}
                         name="password"
                         sx={{width:"100%"}}
+                        onChange={(e) => setCp(e.target.value)}
+
                         style={{ marginTop: 11 }}
                         InputProps={{ disableUnderline: true }}
                       />
@@ -81,14 +118,14 @@ function ResetPassword() {
         </Grid>
 
         <Grid container className='form-items'>
-        <Link to='/login' style={{width:'100%'}}>
+       
 
          
-            <button className='btn' style={{width:'100%'}}>
+            <button onClick={reset} className='btn' style={{width:'100%'}}>
                 Reset password
             </button>
          
-            </Link>
+          
       
 
         </Grid>

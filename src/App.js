@@ -19,6 +19,7 @@ import LinkSent from './pages/auth-pages/LinkSent';
 import ResetPasswordMail from './pages/auth-pages/ResetPasswordMail';
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
+import SuccessVerification from './pages/auth-pages/SuccessVerification';
 function App() {
   const [auth,setAuth]= useState(true)
   
@@ -51,6 +52,8 @@ if(token){
     <Route path='/failed-verification' element={<FailedVerification/>}/>
     <Route path='/linksent' element={<LinkSent/>}/>
     <Route path='/reset-password' element={<ResetPasswordMail/>}/>
+    <Route path='/verified' element={<SuccessVerification/>}/>
+
     {/* redirect to login for any other access  */}
 <Route path='*' element={<Login/>} />
   

@@ -1,9 +1,32 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
+import axios from 'axios';
 import {React,useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ResetPasswordMail() {
- 
+ const navigate = useNavigate()
+ const [email,setEmail] =useState()
+    const Reset = async () => {
+        try {
+    
+        
+          
+    
+          const response= await axios.post('http://localhost:3030/auth/reset-mail',{
+            email
+          });
+    
+          navigate('/checkmail');
+          window.location.reload();
+    
+    
+        } catch (error) {
+          console.error('Error fetching recent data:', error);
+          navigate('/reset-password');
+          window.location.reload();
+        }
+      };
+    
   return (
    <>
    {/* over all wrap 1 */}
@@ -24,7 +47,7 @@ function ResetPasswordMail() {
             <Typography variant='h4'>Blogg</Typography>
             </Grid> 
             <Grid  item container className='w2-tt-2'>
-            <p>Please enter a new password and submit to update your password </p>
+            <p>Please enter your associated mail id </p>
 
             </Grid> 
             </Grid>
@@ -44,6 +67,7 @@ function ResetPasswordMail() {
                         variant="filled"
                         id="email"
                         type='text'
+                        onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         sx={{width:"100%"}}
                         style={{ marginTop: 11 }}
@@ -54,14 +78,13 @@ function ResetPasswordMail() {
        
 
         <Grid container className='form-items'>
-        <Link to='/login' style={{width:'100%'}}>
-
+        
          
-            <button className='btn' style={{width:'100%'}}>
+            <button className='btn' onClick={Reset} style={{width:'100%'}}>
                 Reset password
             </button>
          
-            </Link>
+            
       
 
         </Grid>

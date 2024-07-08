@@ -10,7 +10,7 @@ import img1 from '../../Assets/images/articles.jpg';
 function HomePage({ setAuth }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+const [res,setRes] = useState('')
   useEffect(() => {
     console.log('Component mounted');
     const fetchRecentData = async () => {
@@ -29,8 +29,7 @@ function HomePage({ setAuth }) {
         });
 
         console.log('API Response:', response.data.posts);
-
-      setData(response.data.posts)
+ 
       setLoading(false);
 
       } catch (error) {
@@ -44,8 +43,8 @@ function HomePage({ setAuth }) {
 
   useEffect(() => {
     console.log('Data updated:', data);
-  }, [data]); 
-
+    console.log('res:',res)
+  }, [data,res]); 
   return (
     <>
       <Navbar setAuth={setAuth} />

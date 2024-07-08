@@ -15,7 +15,7 @@ function UpdatedPassword() {
  
        
          {/* ui area for login side image */}
-         <Grid  item className='checkmail-wrap-b '>
+         <Grid  item className='wrap-ver bg-success '>
          <Grid container item className='wrap2-1-text'>
              <Grid container item className='w2-t-h2'>
             

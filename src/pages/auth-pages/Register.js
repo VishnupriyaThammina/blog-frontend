@@ -1,11 +1,49 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
-import {React,useState} from 'react';
-import { Link } from 'react-router-dom';
+import {React,useEffect,useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 function Register() {
+const [email,setEmail] = useState('')
+const [username,setUsername]= useState('')
+const [password,setPassword]=useState('')
+const [btnOk,setBtnOk] =useState(false);
+const [showpassword,setShowPassword]=useState('password');
+const navigate = useNavigate();
+
+  //   form validation
+  useEffect(() => {
+    validateForm(); // keep validating form for any change in email or password
+  }, [email, password,username]);
+
+  const validateForm = () => {
+    const emailValid = validateEmail(email); // if there exists an email
+    const passwordValid = password!== ''; //if password is not null
+    setBtnOk(emailValid && passwordValid);
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  const handleRegister = async () => {
+    try {
+        // sending http request to backend
+      const response = await axios.post('http://localhost:3030/auth/register', {
+        email,
+        password,
+        username,
+        
+      });
 
   
-    const [showpassword,setShowPassword]=useState('password');
+      navigate('/checkmail');
+    } catch (error) {
+      console.error('register failed', error);
+      navigate('/login')
+    }
+  };
+
     const showpasswordhandle=()=>{
        if(showpassword==='password'){
         setShowPassword('text')
@@ -51,6 +89,7 @@ function Register() {
         <TextField
                         label="email"
                         variant="filled"
+                        onChange={(e) => setEmail(e.target.value)}
                         id="email"
                         type="email"
                         name="email"
@@ -63,6 +102,7 @@ function Register() {
         <TextField
                         label="username"
                         variant="filled"
+                        onChange={(e) => setUsername(e.target.value)}
                         id="username"
                         type="text"
                         name="username"
@@ -76,6 +116,8 @@ function Register() {
                         label="password"
                         variant="filled"
                         id="password"
+                        onChange={(e) => setPassword(e.target.value)}
+
                         type={showpassword}
                         name="password"
                         sx={{width:"100%"}}
@@ -88,12 +130,10 @@ function Register() {
         <input type="checkbox" onClick={showpasswordhandle}/>Show Password
         </Grid>
         <Grid container className='form-items'>
-            <Link to='/checkmail'  style={{width:'100%'}}>
-
-            <button className='btn' >
+            
+            <button className='btn'  disabled={!btnOk} onClick={handleRegister}>
                 Register
             </button>
-            </Link>
         </Grid>
         <Grid container className='form-items'>
       
