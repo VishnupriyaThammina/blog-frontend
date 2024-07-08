@@ -17,6 +17,7 @@ Features:
 - Fetching latest posts
 - Fetch posts made by oneself
 - Fetching all posts
+- along with popup promts for edit and delete posts 
 
 Login UI:
 ![image](https://github.com/VishnupriyaThammina/blog-frontend/assets/89837239/e481e399-a377-4797-b2ad-a9e62dd97f9d)
@@ -29,4 +30,10 @@ UI for successful verification via email
 
 Email Sent Demo: 
 ![image](https://github.com/VishnupriyaThammina/blog-frontend/assets/89837239/7d002587-06af-44bd-a724-47d68baa03ac)
+
+
+Creating a post : 
+![image](https://github.com/VishnupriyaThammina/blog-frontend/assets/89837239/f5d065c3-20b5-4bea-bb1b-5fa32ae14df2)
+
+Pop Up implementation : ![image](https://github.com/VishnupriyaThammina/blog-frontend/assets/89837239/093873b5-2b1a-4994-ae91-7852a215114f)
 
