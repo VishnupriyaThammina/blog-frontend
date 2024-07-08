@@ -20,7 +20,7 @@ import ResetPasswordMail from './pages/auth-pages/ResetPasswordMail';
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 function App() {
-  const [auth,setAuth]= useState(false)
+  const [auth,setAuth]= useState(true)
   
 useEffect(() => {
   const token = localStorage.getItem('token')
@@ -33,18 +33,14 @@ if(token){
   <>
   {/* after wrapping app in browser router in index.js; proceed with routing  */}
   <Routes>
-    {
-      auth?(
-        <>
+ 
     <Route path='/' element={<HomePage setAuth={setAuth} />} />
     <Route path='/feed' element={<FeedPage setAuth={setAuth}/>}/>
     <Route path='/profile' element={<Profile setAuth={setAuth}/>}/>
     <Route path='/post/:id' element={<Post setAuth={setAuth}/>}/>
     <Route path='/create' element={<CreatePage setAuth={setAuth}/>}/>
-    <Route path='/edit' element={<EditPage setAuth={setAuth}/>}/>
-        </>
-      ):(
-        <>
+    <Route path='/edit/:id' element={<EditPage setAuth={setAuth}/>}/>
+ 
     <Route path='/login' element={<Login setAuth={setAuth}/>} />
     <Route path='/register' element={<Register/>} />
     <Route path='/checkmail' element={<CheckMail/>}/>
@@ -57,9 +53,7 @@ if(token){
     <Route path='/reset-password' element={<ResetPasswordMail/>}/>
     {/* redirect to login for any other access  */}
 <Route path='*' element={<Login/>} />
-        </>
-      )
-    }
+  
 
 
   {/* Depending on http response we can render these page but they are same for time being i designed them seperately */}

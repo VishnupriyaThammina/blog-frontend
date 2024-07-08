@@ -4,7 +4,7 @@ import React from 'react'
 function Footer() {
   return (
    <>
-   <Grid container className=' footer-w'>
+   <Grid container className=' footer-w' style={{marginTop:"5vh"}}>
     Made by Vishnu Priya Thammina
    </Grid>
    </>

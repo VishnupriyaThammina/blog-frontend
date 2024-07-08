@@ -8,10 +8,11 @@ import Footer from '../../components/Footer';
 import img1 from '../../Assets/images/articles.jpg';
 
 function HomePage({ setAuth }) {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log('Component mounted');
     const fetchRecentData = async () => {
       try {
         const token = localStorage.getItem('token');
@@ -27,17 +28,23 @@ function HomePage({ setAuth }) {
           },
         });
 
-        setData(response.data.posts);
-        console.log(response.data.posts)
-        setLoading(false);
+        console.log('API Response:', response.data.posts);
+
+      setData(response.data.posts)
+      setLoading(false);
+
       } catch (error) {
-        console.error('Error fetching recent data', error);
+        console.error('Error fetching recent data:', error);
         setLoading(false);
       }
     };
 
     fetchRecentData();
   }, []);
+
+  useEffect(() => {
+    console.log('Data updated:', data);
+  }, [data]); 
 
   return (
     <>
@@ -76,12 +83,19 @@ function HomePage({ setAuth }) {
               </Typography>
             </Grid>
 
-            {loading ? (
+            {loading && data.length === 0 ? (
               <CircularProgress style={{ color: '#000' }} />
             ) : (
               <>
-                {data.map((posts) => (
-                  <PostCard key={posts._id} thumbnail={posts.thumbnail} id={posts._id} title={posts.title} subtitle={posts.subTitle} />
+                {data.map((post) => (
+                  <PostCard
+                    key={post._id}
+                    title={post.title}
+                    subtitle={post.subtitle} // Adjust to match your API response structure
+                    thumbnail={post.thumbnail}
+                    owner={post.isOwner} // Adjust to match your API response structure
+                    post={post}
+                  />
                 ))}
               </>
             )}

@@ -72,7 +72,7 @@ Your blog posts
             ) : (
               <>
                 {data.map((posts) => (
-                  <PostCard key={posts._id} thumbnail={posts.thumbnail} id={posts._id} title={posts.title} subtitle={posts.subTitle} />
+                  <PostCard key={posts._id}   post={posts} thumbnail={posts.thumbnail} owner={true} id={posts._id} title={posts.title} subtitle={posts.subTitle} />
                 ))}
               </>
             )}

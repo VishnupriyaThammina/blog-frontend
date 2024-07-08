@@ -1,8 +1,46 @@
 import { Grid, Typography } from '@mui/material'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Popup(props) {
+const navigate = useNavigate();
+
+
+        const DeletePost = async () => {
+          try {
+            const token = localStorage.getItem('token');
+    
+            if (!token) {
+              console.error('Token not available');
+              return;
+            }
+            
+    
+            await axios.post('http://localhost:3030/post/delete-post',{postid:props.post._id}, {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            });
+    
+            navigate('/');
+            window.location.reload();
+      
+          } catch (error) {
+            console.error('Error fetching recent data:', error);
+          }
+        };
+    
+       
+    function handleAPI(){
+        if(props.popText=='Delete'){
+            DeletePost() 
+        }else{
+            navigate(`/edit/${props.post._id}`)
+            window.location.reload()
+        }
+    }
+    
   return (
     <>
 
@@ -30,7 +68,7 @@ function Popup(props) {
             <Grid item>
                 <Link to={props.link}>
                 
-            <button className='btn'>{props.popText}</button>
+            <button className='btn' onClick={handleAPI}>{props.popText}</button>
             </Link>
 
             </Grid>
