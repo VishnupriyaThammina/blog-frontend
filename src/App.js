@@ -21,7 +21,7 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import SuccessVerification from './pages/auth-pages/SuccessVerification';
 function App() {
-  const [auth,setAuth]= useState(true)
+  const [auth,setAuth]= useState(false)
   
 useEffect(() => {
   const token = localStorage.getItem('token')
@@ -35,12 +35,12 @@ if(token){
   {/* after wrapping app in browser router in index.js; proceed with routing  */}
   <Routes>
  
-    <Route path='/' element={<HomePage setAuth={setAuth} />} />
-    <Route path='/feed' element={<FeedPage setAuth={setAuth}/>}/>
-    <Route path='/profile' element={<Profile setAuth={setAuth}/>}/>
-    <Route path='/post/:id' element={<Post setAuth={setAuth}/>}/>
-    <Route path='/create' element={<CreatePage setAuth={setAuth}/>}/>
-    <Route path='/edit/:id' element={<EditPage setAuth={setAuth}/>}/>
+    <Route path='/' element={auth ? <HomePage  setAuth={setAuth}  /> : <Login />} />
+    <Route path='/feed' element={auth ? <FeedPage  setAuth={setAuth} /> : <Login />} />
+        <Route path='/profile' element={auth ? <Profile  setAuth={setAuth} /> : <Login />} />
+        <Route path='/post/:id' element={auth ? <Post  setAuth={setAuth} /> : <Login />} />
+        <Route path='/create' element={auth ? <CreatePage  setAuth={setAuth} /> : <Login />} />
+        <Route path='/edit/:id' element={auth ? <EditPage  setAuth={setAuth} /> : <Login />} />
  
     <Route path='/login' element={<Login setAuth={setAuth}/>} />
     <Route path='/register' element={<Register/>} />
