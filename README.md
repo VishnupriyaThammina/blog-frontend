@@ -19,6 +19,7 @@ Features:
 - Fetching all posts
 - along with popup promts for edit and delete posts 
 
+dummy frontend deployment: https://668a1740f2833065134ba8d2--luminous-conkies-1af9bb.netlify.app/ [ to show how the application works ]
 Login UI:
 ![image](https://github.com/VishnupriyaThammina/blog-frontend/assets/89837239/e481e399-a377-4797-b2ad-a9e62dd97f9d)
 
