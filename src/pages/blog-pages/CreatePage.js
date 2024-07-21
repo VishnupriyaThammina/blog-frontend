@@ -70,7 +70,7 @@ function CreatePage({ setAuth }) {
       }
      
     
-    const response = await axios.post('https://blog-backend-delta-two.vercel.app/post/create-post', {
+    const response = await axios.post('http://localhost:3030/post/create-post', {
         title,
         subtitle,
         content,
