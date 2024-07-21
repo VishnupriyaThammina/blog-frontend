@@ -21,7 +21,7 @@ function FeedPage({ setAuth }) {
           return;
         }
 
-        const response = await axios.get('http://localhost:3030/post/get-all-post', {
+        const response = await axios.get('https://blog-backend-delta-two.vercel.app/post/get-all-post', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

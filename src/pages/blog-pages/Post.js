@@ -27,7 +27,7 @@ function Post({setAuth}) {
               return;
             }
     
-            const response = await axios.post('http://localhost:3030/post/get-full-post',{postid:id}, {
+            const response = await axios.post('https://blog-backend-delta-two.vercel.app/post/get-full-post',{postid:id}, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },

@@ -23,7 +23,7 @@ const navigate = useNavigate()
       }
       
 
-      const response= await axios.post('http://localhost:3030/user/verify-token',{token:id}, {
+      const response= await axios.post('https://blog-backend-delta-two.vercel.app/user/verify-token',{token:id}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -12,7 +12,7 @@ function ResetPasswordMail() {
         
           
     
-          const response= await axios.post('http://localhost:3030/auth/reset-mail',{
+          const response= await axios.post('https://blog-backend-delta-two.vercel.app/auth/reset-mail',{
             email
           });
           if(response.status===200){
