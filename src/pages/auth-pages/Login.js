@@ -126,7 +126,7 @@ function Login({setAuth}) {
 
         </Grid>
         <Grid container className='form-items'>
-        <Link to='/linksent' className='link-login'>
+        <Link to='/reset-password' className='link-login'>
         Forgot password?
         </Link>   or
         <Link to='/register'  className='link-login'>

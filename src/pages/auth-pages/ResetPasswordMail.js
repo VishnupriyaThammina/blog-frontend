@@ -15,10 +15,11 @@ function ResetPasswordMail() {
           const response= await axios.post('http://localhost:3030/auth/reset-mail',{
             email
           });
-    
+          if(response.status===200){
           navigate('/checkmail');
           window.location.reload();
-    
+          }
+          console.log(response)
     
         } catch (error) {
           console.error('Error fetching recent data:', error);

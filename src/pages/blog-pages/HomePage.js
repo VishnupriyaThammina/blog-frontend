@@ -29,7 +29,7 @@ const [res,setRes] = useState('')
         });
 
         console.log('API Response:', response.data.posts);
- 
+        setData(response.data.posts)
       setLoading(false);
 
       } catch (error) {
@@ -45,6 +45,7 @@ const [res,setRes] = useState('')
     console.log('Data updated:', data);
     console.log('res:',res)
   }, [data,res]); 
+ console.log(res)
   return (
     <>
       <Navbar setAuth={setAuth} />
