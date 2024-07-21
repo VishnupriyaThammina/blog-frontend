@@ -31,7 +31,7 @@ const navigate = useNavigate()
     
       
 
-      const response= await axios.post('http://localhost:3030/user/reset',{
+      const response= await axios.post('https://blog-backend-delta-two.vercel.app/user/reset',{
         token:id,
         np:np,
         cp:cp

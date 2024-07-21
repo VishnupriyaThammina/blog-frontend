@@ -21,7 +21,7 @@ function Profile({setAuth}) {
           return;
         }
 
-        const response = await axios.get('http://localhost:3030/post/get-user-post', {
+        const response = await axios.get('https://blog-backend-delta-two.vercel.app/post/get-user-post', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

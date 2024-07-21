@@ -30,7 +30,7 @@ function Login({setAuth}) {
   const handleLogin = async () => {
     try {
         // sending http request to backend
-      const response = await axios.post('http://localhost:3030/auth/login', {
+      const response = await axios.post('https://blog-backend-delta-two.vercel.app/auth/login', {
         email,
         password,
       });
@@ -126,7 +126,7 @@ function Login({setAuth}) {
 
         </Grid>
         <Grid container className='form-items'>
-        <Link to='/linksent' className='link-login'>
+        <Link to='/reset-password' className='link-login'>
         Forgot password?
         </Link>   or
         <Link to='/register'  className='link-login'>

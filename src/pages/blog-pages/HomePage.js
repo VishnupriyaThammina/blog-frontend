@@ -22,14 +22,14 @@ const [res,setRes] = useState('')
           return;
         }
 
-        const response = await axios.get('http://localhost:3030/post/get-5-post', {
+        const response = await axios.get('https://blog-backend-delta-two.vercel.app/post/get-5-post', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
 
         console.log('API Response:', response.data.posts);
- 
+        setData(response.data.posts)
       setLoading(false);
 
       } catch (error) {
@@ -45,6 +45,7 @@ const [res,setRes] = useState('')
     console.log('Data updated:', data);
     console.log('res:',res)
   }, [data,res]); 
+ console.log(res)
   return (
     <>
       <Navbar setAuth={setAuth} />

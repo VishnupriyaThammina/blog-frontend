@@ -17,7 +17,7 @@ const navigate = useNavigate();
             }
             
     
-            await axios.post('http://localhost:3030/post/delete-post',{postid:props.post._id}, {
+            await axios.post('https://blog-backend-delta-two.vercel.app/post/delete-post',{postid:props.post._id}, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
