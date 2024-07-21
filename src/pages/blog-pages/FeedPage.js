@@ -67,7 +67,7 @@ function FeedPage({ setAuth }) {
                   <PostCard
                     key={post._id}
                     title={post.title}
-                    subtitle={post.subtitle} // Adjust to match your API response structure
+                    subtitle={post.subTitle} // Adjust to match your API response structure
                     thumbnail={post.thumbnail}
                     owner={post.isOwner} // Adjust to match your API response structure
                     post={post}
